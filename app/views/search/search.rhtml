@@ -1,0 +1,30 @@
+
+
+<h3>Search Results:</h3>
+<br/>
+
+<% if @records %>
+	<ul>
+		<% for record in @records %>
+			<% 
+				school=ApiGrowth.find_by_school_code(record.school_code)	
+			%>
+			<% if school %>
+				<%params=year="school_type=#{school.school_type}&year=#{record.year}&school_code=#{record.school_code}&district_code=#{record.district_code}&county_code=#{record.county_code}"%>
+				<li>
+					<a href='<%=@app_base%>/school/api_score?<%=params%>'><%=record.school_name%></a>, 
+										<a href='<%=@app_base%>/district/api_score?<%=params%>'><%=record.district_name%></a>, 
+										<a href='<%=@app_base%>/county/api_score?<%=params%>'><%=record.county_name%></a>
+				</li>
+			<% else %>
+				<li><%=record.school_name%>, <%=record.district_name%>, <%=record.county_name%></li>				
+			<% end %>	
+		<% end %>
+	</ul>
+	
+	<br />
+		
+	<%= link_to 'Previous', { :page => @pages.current.previous, :query => @query} if @pages.current.previous %>
+	<%= pagination_links(@pages, :params => { :query=> @query }) %>
+	<%= link_to 'Next', { :page => @pages.current.next, :query => @query} if @pages.current.next %>
+<% end %>	

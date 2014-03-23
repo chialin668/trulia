@@ -1,0 +1,6 @@
+
+
+<% form_tag :controller => @app_name.downcase, :action => 'search' do %>
+	<%= text_field_tag 'query', nil, {:size=>20}%> <br />
+	<%= submit_tag "Search" %>
+<% end %>

@@ -1,0 +1,27 @@
+# Logfile created on Sun Feb 24 19:23:17 CST 2008 by logger.rb/1.5.2.7
+LocalIndex: ensure_index_exists at ../config/../index/development/api_growth
+rebuild index: [ApiGrowth]
+reindexing model ApiGrowth
+reindex model ApiGrowth : 1.68% complete : 2460.74 secs to finish
+reindex model ApiGrowth : 3.36% complete : 1778.90 secs to finish
+reindex model ApiGrowth : 5.04% complete : 513.14 secs to finish
+reindex model ApiGrowth : 6.72% complete : 468.84 secs to finish
+reindex model ApiGrowth : 8.40% complete : 1885.49 secs to finish
+reindex model ApiGrowth : 10.08% complete : 466.08 secs to finish
+reindex model ApiGrowth : 11.77% complete : 475.64 secs to finish
+reindex model ApiGrowth : 13.45% complete : 529.24 secs to finish
+reindex model ApiGrowth : 15.13% complete : 894.06 secs to finish
+reindex model ApiGrowth : 16.81% complete : 2153.60 secs to finish
+reindex model ApiGrowth : 18.49% complete : 1367.17 secs to finish
+reindex model ApiGrowth : 20.17% complete : 410.42 secs to finish
+LocalIndex: ensure_index_exists at ../config/../index/development/api_growth
+rebuild index: [ApiGrowth]
+reindexing model ApiGrowth
+reindex model ApiGrowth : 1.68% complete : 1182.58 secs to finish
+reindex model ApiGrowth : 3.36% complete : 845.01 secs to finish
+reindex model ApiGrowth : 5.04% complete : 895.36 secs to finish
+reindex model ApiGrowth : 6.72% complete : 2627.43 secs to finish
+reindex model ApiGrowth : 8.40% complete : 1496.40 secs to finish
+reindex model ApiGrowth : 10.08% complete : 2174.33 secs to finish
+reindex model ApiGrowth : 11.77% complete : 1478.75 secs to finish
+reindex model ApiGrowth : 13.45% complete : 1945.59 secs to finish

@@ -1,0 +1,57 @@
+
+
+
+<%
+  params="school_type=#{@school_type}&year=#{@year}&school_code=#{@school_code}&district_code=#{@district_code}&county_code=#{@county_code}"
+%>
+
+<div id="sidebarContainer">
+	<div id="sidebar">
+		<div id="sidebar-categories">
+
+<br/>
+<%
+ajax_params=
+	"'school_type='+ escape($('school_type').value) " + 
+	"+ '&html_type='+ escape($('html_type').value)" + 
+	"+ '&year='+ escape($('year').value)" + 
+	"+ '&school_code='+ escape($('school_code').value)" + 
+	"+ '&district_code='+ escape($('district_code').value)" + 
+	"+ '&county_code='+ escape($('county_code').value)"
+%>
+
+<h3>Score Trends:</h3>
+&#164; <%= link_to_remote( "API Growth Trend", :update => "ajax_div", :url => { :controller => 'school', :action => 'api_score'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Compare Scores", :update => "ajax_div", :url => { :controller => 'school', :action => 'api_all_scores'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "School Ranks", :update => "ajax_div", :url => { :controller => 'school', :action => 'api_rank'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Mean Scaled Scores", :update => "ajax_div", :url => { :controller => 'school', :action => 'star_summary_mean'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Performance Levels", :update => "ajax_div", :url => { :controller => 'school', :action => 'star_summary_pct'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+<% if School.has_3rd_or_7th_grade?(@school_code) %>
+	&#164; <%= link_to_remote( "PACs", :update => "ajax_div", :url => { :controller => 'school', :action => 'star_summary_pac'}, :with => ajax_params, :update => 'ajax_div')  %><br/>
+<% end %>	
+<br/>
+
+<h3>By Year:</h3>
+&#164; <%= link_to_remote( "API Details", :update => "ajax_div", :url => { :controller => 'school', :action => 'api_detail'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Distribution by Subject", :update => "ajax_div", :url => { :controller => 'school', :action => 'star_distribution'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Race Distribution", :update => "ajax_div", :url => { :controller => 'school', :action => 'race'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "API BY Race", :update => "ajax_div", :url => { :controller => 'school', :action => 'api_by_race'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Subgroup Detail - Race", :update => "ajax_div", :url => { :controller => 'school', :action => 'subgroup_detail_by_race'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Subgroup Detail - Others", :update => "ajax_div", :url => { :controller => 'school', :action => 'subgroup_detail_other'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Parent Education Level", :update => "ajax_div", :url => { :controller => 'school', :action => 'parent_ed_level'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Average Class Size", :update => "ajax_div", :url => { :controller => 'school', :action => 'avg_class_size'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Student Demographic", :update => "ajax_div", :url => { :controller => 'school', :action => 'special_student'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Number of Valid Scores", :update => "ajax_div", :url => { :controller => 'school', :action => 'pcst'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Teacher Credentials", :update => "ajax_div", :url => { :controller => 'school', :action => 'teacher'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+&#164; <%= link_to_remote( "Percent of Enrollment", :update => "ajax_div", :url => { :controller => 'school', :action => 'pct_enrollment'}, :with => ajax_params, :update => 'ajax_div') %><br/>
+<br/>
+
+[<A HREF="javascript:javascript:history.go(-1)">Back</A>]
+
+
+		</div>					 
+	</div> <!-- sidebar -->
+
+</div> <!-- sidbarContainer -->
+
+
